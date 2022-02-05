@@ -50,22 +50,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   int _selectedIndex = 0;
 
-  // 表示する Widget の一覧
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   static final List<Widget> _pageList = [
     const YamamotoPage(title: 'Yamamoto', bgColor: Colors.black45),
     const KimuraPage(title: 'Kimura', bgColor: Colors.green),
@@ -80,8 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: _pageList[_selectedIndex],
-      bottomNavigationBar:
-          BottomNavigationBar(items: const <BottomNavigationBarItem>[
+      bottomNavigationBar: BottomNavigationBar(items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Yamamoto',
@@ -92,12 +84,5 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ], currentIndex: 0, onTap: _onItemTapped),
     );
-  }
-
-  // タップ時の処理
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
   }
 }
