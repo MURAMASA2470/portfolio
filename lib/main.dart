@@ -67,13 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // 表示する Widget の一覧
   static final List<Widget> _pageList = [
-    const YamamotoPage(title: 'Yamamoto', bgColor: Colors.pink),
+    const YamamotoPage(title: 'Yamamoto', bgColor: Colors.black45),
     const KimuraPage(title: 'Kimura', bgColor: Colors.green),
   ];
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -81,25 +80,17 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: _pageList[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Yamamoto',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Kimura',
-          ),
-        ],
-        currentIndex: 0,
-        onTap: _onItemTapped
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      bottomNavigationBar:
+          BottomNavigationBar(items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Yamamoto',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.settings),
+          label: 'Kimura',
+        ),
+      ], currentIndex: 0, onTap: _onItemTapped),
     );
   }
 
