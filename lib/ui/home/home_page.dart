@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/ui/hobby/hobby_page.dart';
 import 'package:portfolio/ui/hooks/use_l10n.dart';
@@ -18,7 +19,12 @@ class HomePage extends HookConsumerWidget {
     final viewModel = ref.watch(homeViewModelProvider.notifier);
     final l10n = useL10n();
 
-    void _onBottomNavigationTapped(int index) {}
+    AutoRouter.of(context);
+
+    void _onBottomNavigationTapped(int index) {
+
+      context.router.pushNamed('/hobby');
+    }
 
     return state.when(
       data: (data) {
