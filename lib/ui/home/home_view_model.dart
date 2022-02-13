@@ -1,5 +1,5 @@
-import 'package:flapp/data/repository/home/home_repository.dart';
-import 'package:flapp/data/repository/home/home_repository_impl.dart';
+import 'package:portfolio/data/repository/home/home_repository.dart';
+import 'package:portfolio/data/repository/home/home_repository_impl.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'home_state.dart';

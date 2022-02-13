@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(flapp LANGUAGES CXX)
+project(portfolio LANGUAGES CXX)
 
-set(BINARY_NAME "flapp")
+set(BINARY_NAME "portfolio")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -1,6 +1,6 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:flapp/ui/home/home_page.dart';
-import 'package:flapp/ui/theme/app_theme.dart';
+import 'package:portfolio/ui/home/home_page.dart';
+import 'package:portfolio/ui/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

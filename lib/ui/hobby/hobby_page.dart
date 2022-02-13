@@ -1,9 +1,9 @@
-import 'package:flapp/gen/assets.gen.dart';
-import 'package:flapp/ui/hobby/hobby_view_model.dart';
-import 'package:flapp/ui/home/home_page.dart';
-import 'package:flapp/ui/hooks/use_l10n.dart';
-import 'package:flapp/ui/theme/app_text_theme.dart';
-import 'package:flapp/ui/theme/app_theme.dart';
+import 'package:portfolio/gen/assets.gen.dart';
+import 'package:portfolio/ui/hobby/hobby_view_model.dart';
+import 'package:portfolio/ui/home/home_page.dart';
+import 'package:portfolio/ui/hooks/use_l10n.dart';
+import 'package:portfolio/ui/theme/app_text_theme.dart';
+import 'package:portfolio/ui/theme/app_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

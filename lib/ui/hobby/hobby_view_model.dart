@@ -1,5 +1,5 @@
-import 'package:flapp/data/repository/hobby/hobby_repository.dart';
-import 'package:flapp/data/repository/hobby/hobby_repository_impl.dart';
+import 'package:portfolio/data/repository/hobby/hobby_repository.dart';
+import 'package:portfolio/data/repository/hobby/hobby_repository_impl.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'hobby_state.dart';

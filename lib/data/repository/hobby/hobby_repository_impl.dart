@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:flapp/data/model/result/result.dart';
+import 'package:portfolio/data/model/result/result.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'hobby_repository.dart';
