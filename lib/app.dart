@@ -1,5 +1,4 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:portfolio/ui/home/home_page.dart';
 import 'package:portfolio/ui/routes/app_route.gr.dart';
 import 'package:portfolio/ui/theme/app_theme.dart';
 import 'package:flutter/material.dart';

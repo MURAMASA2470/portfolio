@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/ui/hobby/hobby_page.dart';
 import 'package:portfolio/ui/hooks/use_l10n.dart';
@@ -19,17 +18,11 @@ class HomePage extends HookConsumerWidget {
     final viewModel = ref.watch(homeViewModelProvider.notifier);
     final l10n = useL10n();
 
-    AutoRouter.of(context);
-
-    void _onBottomNavigationTapped(int index) {
-
-      context.router.pushNamed('/hobby');
-    }
+    void _onBottomNavigationTapped(int index) {}
 
     return state.when(
       data: (data) {
-        return Scaffold(
-          body: Center(
+        return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -52,23 +45,7 @@ class HomePage extends HookConsumerWidget {
                 )
               ],
             ),
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.business),
-                label: 'Hobby',
-              ),
-            ],
-            currentIndex: data.selectedIndex,
-            selectedItemColor: theme.appColors.secondaryVariant,
-            onTap: _onBottomNavigationTapped,
-          ),
-        );
+          );
       },
       error: (e, msg) => Text(e.toString()),
       loading: () {

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/ui/hobby/hobby_view_model.dart';
 import 'package:portfolio/ui/home/home_page.dart';
@@ -18,22 +19,9 @@ class HobbyPage extends HookConsumerWidget {
     final viewModel = ref.watch(hobbyViewModelProvider.notifier);
     final l10n = useL10n();
 
-    void _onBottomNavigationTapped(int index) {
-      switch (index) {
-        case 0:
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const HomePage()));
-          break;
-        case 1:
-          break;
-        default:
-      }
-    }
-
     return state.when(
       data: (data) {
-        return Scaffold(
-          body: Center(
+        return Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -56,23 +44,7 @@ class HobbyPage extends HookConsumerWidget {
                 )
               ],
             ),
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.business),
-                label: 'Hobby',
-              ),
-            ],
-            currentIndex: data.selectedIndex,
-            selectedItemColor: theme.appColors.secondaryVariant,
-            onTap: _onBottomNavigationTapped,
-          ),
-        );
+          );
       },
       error: (e, msg) => Text(e.toString()),
       loading: () {
