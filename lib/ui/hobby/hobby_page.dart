@@ -23,51 +23,257 @@ class HobbyPage extends HookConsumerWidget {
 
     return state.when(
       data: (data) {
-        return Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  margin: const EdgeInsets.fromLTRB(30, 15, 10, 0),
-                  width: 100,
-                  height: 100,
-                  child: Text(
-                    '総資産',
-                    style: theme.textTheme.h70.bold(),
+        return SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(30, 15, 10, 0),
+                    width: 100,
+                    height: 80,
+                    child: Text(
+                      '総資産',
+                      style: theme.textTheme.h70.bold(),
+                    ),
+                  ),
+                  Expanded(
+                      child: SizedBox(
+                    height: 80,
+                    child: Text(
+                      formatter.format(83973438) + ' 円',
+                      style: theme.textTheme.h70.comfort(),
+                    ),
+                  ))
+                ],
+              ),
+              const Divider(),
+              Assets.img.hobby01.image(width: 400),
+              const Divider(),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  elevation: 0,
+                  onPrimary: Colors.grey,
+                ),
+                onPressed: () {},
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(30, 15, 10, 0),
+                        height: 50,
+                        child: Text(
+                          '国内株式',
+                          style: theme.textTheme.h50.bold(),
+                        ),
+                      ),
+                      Expanded(
+                          child: SizedBox(
+                        height: 50,
+                        child: Text(
+                          formatter.format(41345538) + ' 円',
+                          style: theme.textTheme.h50.comfort(),
+                          textAlign: TextAlign.end,
+                        ),
+                      )),
+                      const SizedBox(
+                        width: 50,
+                        child: Icon(Icons.chevron_right),
+                      ),
+                    ],
                   ),
                 ),
-                Expanded(
-                    child: SizedBox(
-                  height: 100,
-                  child: Text(
-                    formatter.format(83973438) + ' 円',
-                    style: theme.textTheme.h70.comfort(),
-                  ),
-                ))
-              ],
-            ),
-            const Divider(),
-            Assets.img.hobby01.image(width: 400),
-            Text(
-              l10n.hello,
-              style: theme.textTheme.h70.bold(),
-            ),
-            const Divider(),
-            Text(
-              'Hobby Page',
-              style: theme.textTheme.h70.bold(),
-            ),
-            const Divider(),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: theme.appColors.primary,
-                onPrimary: theme.appColors.onPrimary,
               ),
-              onPressed: () {},
-              child: Text(data.count.toString()),
-            )
-          ],
+              const Divider(),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  elevation: 0,
+                  onPrimary: Colors.grey,
+                ),
+                onPressed: () {},
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(30, 15, 10, 0),
+                        height: 50,
+                        child: Text(
+                          '先進国株式',
+                          style: theme.textTheme.h50.bold(),
+                        ),
+                      ),
+                      Expanded(
+                          child: SizedBox(
+                        height: 50,
+                        child: Text(
+                          formatter.format(23392077) + ' 円',
+                          style: theme.textTheme.h50.comfort(),
+                          textAlign: TextAlign.end,
+                        ),
+                      )),
+                      const SizedBox(
+                        width: 50,
+                        child: Icon(Icons.chevron_right),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const Divider(),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  elevation: 0,
+                  onPrimary: Colors.grey,
+                ),
+                onPressed: () {},
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(30, 15, 10, 0),
+                        height: 50,
+                        child: Text(
+                          '新興国株式',
+                          style: theme.textTheme.h50.bold(),
+                        ),
+                      ),
+                      Expanded(
+                          child: SizedBox(
+                        height: 50,
+                        child: Text(
+                          formatter.format(5759832) + ' 円',
+                          style: theme.textTheme.h50.comfort(),
+                          textAlign: TextAlign.end,
+                        ),
+                      )),
+                      const SizedBox(
+                        width: 50,
+                        child: Icon(Icons.chevron_right),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const Divider(),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  elevation: 0,
+                  onPrimary: Colors.grey,
+                ),
+                onPressed: () {},
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(30, 15, 10, 0),
+                        height: 50,
+                        child: Text(
+                          '国内債券',
+                          style: theme.textTheme.h50.bold(),
+                        ),
+                      ),
+                      Expanded(
+                          child: SizedBox(
+                        height: 50,
+                        child: Text(
+                          formatter.format(894648) + ' 円',
+                          style: theme.textTheme.h50.comfort(),
+                          textAlign: TextAlign.end,
+                        ),
+                      )),
+                      const SizedBox(
+                        width: 50,
+                        child: Icon(Icons.chevron_right),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const Divider(),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  elevation: 0,
+                  onPrimary: Colors.grey,
+                ),
+                onPressed: () {},
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(30, 15, 10, 0),
+                        height: 50,
+                        child: Text(
+                          '先進国債権',
+                          style: theme.textTheme.h50.bold(),
+                        ),
+                      ),
+                      Expanded(
+                          child: SizedBox(
+                        height: 50,
+                        child: Text(
+                          formatter.format(375920) + ' 円',
+                          style: theme.textTheme.h50.comfort(),
+                          textAlign: TextAlign.end,
+                        ),
+                      )),
+                      const SizedBox(
+                        width: 50,
+                        child: Icon(Icons.chevron_right),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const Divider(),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  elevation: 0,
+                  onPrimary: Colors.grey,
+                ),
+                onPressed: () {},
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(30, 15, 10, 0),
+                        height: 50,
+                        child: Text(
+                          '国内REIT',
+                          style: theme.textTheme.h50.bold(),
+                        ),
+                      ),
+                      Expanded(
+                          child: SizedBox(
+                        height: 50,
+                        child: Text(
+                          formatter.format(94648) + ' 円',
+                          style: theme.textTheme.h50.comfort(),
+                          textAlign: TextAlign.end,
+                        ),
+                      )),
+                      const SizedBox(
+                        width: 50,
+                        child: Icon(Icons.chevron_right),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const Divider(),
+            ],
+          ),
         );
       },
       error: (e, msg) => Text(e.toString()),
