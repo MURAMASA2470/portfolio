@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:intl/intl.dart';
 import 'package:portfolio/gen/assets.gen.dart';
 import 'package:portfolio/ui/hobby/hobby_view_model.dart';
 import 'package:portfolio/ui/home/home_page.dart';
@@ -18,31 +19,55 @@ class HobbyPage extends HookConsumerWidget {
     final state = ref.watch(hobbyViewModelProvider);
     final viewModel = ref.watch(hobbyViewModelProvider.notifier);
     final l10n = useL10n();
+    final formatter = NumberFormat('#,###.#');
 
     return state.when(
       data: (data) {
-        return Container(
-          child: Column(
-            children: [
-              Assets.img.hobby01.image(width: 400),
-              Text(
-                l10n.hello,
-                style: theme.textTheme.h70.bold(),
-              ),
-              Text(
-                'Hobby Page',
-                style: theme.textTheme.h70.bold(),
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: theme.appColors.primary,
-                  onPrimary: theme.appColors.onPrimary,
+        return Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: const EdgeInsets.fromLTRB(30, 15, 10, 0),
+                  width: 100,
+                  height: 100,
+                  child: Text(
+                    '総資産',
+                    style: theme.textTheme.h70.bold(),
+                  ),
                 ),
-                onPressed: () {},
-                child: Text(data.count.toString()),
-              )
-            ],
-          ),
+                Expanded(
+                    child: SizedBox(
+                  height: 100,
+                  child: Text(
+                    formatter.format(83973438) + ' 円',
+                    style: theme.textTheme.h70.comfort(),
+                  ),
+                ))
+              ],
+            ),
+            const Divider(),
+            Assets.img.hobby01.image(width: 400),
+            Text(
+              l10n.hello,
+              style: theme.textTheme.h70.bold(),
+            ),
+            const Divider(),
+            Text(
+              'Hobby Page',
+              style: theme.textTheme.h70.bold(),
+            ),
+            const Divider(),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: theme.appColors.primary,
+                onPrimary: theme.appColors.onPrimary,
+              ),
+              onPressed: () {},
+              child: Text(data.count.toString()),
+            )
+          ],
         );
       },
       error: (e, msg) => Text(e.toString()),

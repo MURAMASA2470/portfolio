@@ -20,6 +20,7 @@ class AppTextTheme {
     final _normalRegular = GoogleFonts.zenKakuGothicNew(
       textStyle: const TextStyle(
         fontWeight: FontWeight.w400,
+        color: Colors.grey,
         height: 1.5,
         leadingDistribution: TextLeadingDistribution.even,
       ),

@@ -36,10 +36,18 @@ class AppTheme {
     final appColors = AppColors.light();
     final themeData = ThemeData.light().copyWith(
       scaffoldBackgroundColor: appColors.background,
-      textTheme: GoogleFonts.notoSansTextTheme(ThemeData.light().textTheme),
+      textTheme:
+          GoogleFonts.zenKakuGothicNewTextTheme(ThemeData.light().textTheme),
       snackBarTheme: SnackBarThemeData(
         backgroundColor: appColors.error,
         behavior: SnackBarBehavior.floating,
+      ),
+      dividerTheme: const DividerThemeData(
+        space: 5,
+        thickness: 1,
+        indent: 15,
+        endIndent: 15,
+        color: Colors.grey,
       ),
     );
     return AppTheme(
@@ -55,10 +63,18 @@ class AppTheme {
     final appColors = AppColors.dark();
     final themeData = ThemeData.dark().copyWith(
       scaffoldBackgroundColor: appColors.background,
-      textTheme: GoogleFonts.notoSansTextTheme(ThemeData.dark().textTheme),
+      textTheme:
+          GoogleFonts.zenKakuGothicNewTextTheme(ThemeData.dark().textTheme),
       snackBarTheme: SnackBarThemeData(
         backgroundColor: appColors.error,
         behavior: SnackBarBehavior.floating,
+      ),
+      dividerTheme: const DividerThemeData(
+        space: 5,
+        thickness: 1,
+        indent: 15,
+        endIndent: 15,
+        color: Colors.grey,
       ),
     );
     return AppTheme(
