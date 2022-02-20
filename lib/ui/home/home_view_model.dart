@@ -41,4 +41,11 @@ class HomeViewModel extends StateNotifier<AsyncValue<HomeState>> {
       HomeState(count: count + 1),
     );
   }
+
+  void panelTapped() {
+    final panelState = state.value!.panelState;
+    state = AsyncValue.data(
+      HomeState(panelState: !panelState),
+    );
+  }
 }

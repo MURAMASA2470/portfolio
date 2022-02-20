@@ -18,10 +18,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$HomeStateTearOff {
   const _$HomeStateTearOff();
 
-  _HomeState call({int count = 0, int selectedIndex = 0}) {
+  _HomeState call(
+      {int count = 0, int selectedIndex = 0, bool panelState = false}) {
     return _HomeState(
       count: count,
       selectedIndex: selectedIndex,
+      panelState: panelState,
     );
   }
 }
@@ -33,6 +35,7 @@ const $HomeState = _$HomeStateTearOff();
 mixin _$HomeState {
   int get count => throw _privateConstructorUsedError;
   int get selectedIndex => throw _privateConstructorUsedError;
+  bool get panelState => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -43,7 +46,7 @@ mixin _$HomeState {
 abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res>;
-  $Res call({int count, int selectedIndex});
+  $Res call({int count, int selectedIndex, bool panelState});
 }
 
 /// @nodoc
@@ -58,6 +61,7 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
   $Res call({
     Object? count = freezed,
     Object? selectedIndex = freezed,
+    Object? panelState = freezed,
   }) {
     return _then(_value.copyWith(
       count: count == freezed
@@ -68,6 +72,10 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      panelState: panelState == freezed
+          ? _value.panelState
+          : panelState // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -78,7 +86,7 @@ abstract class _$HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
           _HomeState value, $Res Function(_HomeState) then) =
       __$HomeStateCopyWithImpl<$Res>;
   @override
-  $Res call({int count, int selectedIndex});
+  $Res call({int count, int selectedIndex, bool panelState});
 }
 
 /// @nodoc
@@ -94,6 +102,7 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
   $Res call({
     Object? count = freezed,
     Object? selectedIndex = freezed,
+    Object? panelState = freezed,
   }) {
     return _then(_HomeState(
       count: count == freezed
@@ -104,6 +113,10 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      panelState: panelState == freezed
+          ? _value.panelState
+          : panelState // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -111,7 +124,8 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_HomeState implements _HomeState {
-  const _$_HomeState({this.count = 0, this.selectedIndex = 0});
+  const _$_HomeState(
+      {this.count = 0, this.selectedIndex = 0, this.panelState = false});
 
   @JsonKey()
   @override
@@ -119,10 +133,13 @@ class _$_HomeState implements _HomeState {
   @JsonKey()
   @override
   final int selectedIndex;
+  @JsonKey()
+  @override
+  final bool panelState;
 
   @override
   String toString() {
-    return 'HomeState(count: $count, selectedIndex: $selectedIndex)';
+    return 'HomeState(count: $count, selectedIndex: $selectedIndex, panelState: $panelState)';
   }
 
   @override
@@ -132,14 +149,17 @@ class _$_HomeState implements _HomeState {
             other is _HomeState &&
             const DeepCollectionEquality().equals(other.count, count) &&
             const DeepCollectionEquality()
-                .equals(other.selectedIndex, selectedIndex));
+                .equals(other.selectedIndex, selectedIndex) &&
+            const DeepCollectionEquality()
+                .equals(other.panelState, panelState));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(count),
-      const DeepCollectionEquality().hash(selectedIndex));
+      const DeepCollectionEquality().hash(selectedIndex),
+      const DeepCollectionEquality().hash(panelState));
 
   @JsonKey(ignore: true)
   @override
@@ -148,12 +168,15 @@ class _$_HomeState implements _HomeState {
 }
 
 abstract class _HomeState implements HomeState {
-  const factory _HomeState({int count, int selectedIndex}) = _$_HomeState;
+  const factory _HomeState({int count, int selectedIndex, bool panelState}) =
+      _$_HomeState;
 
   @override
   int get count;
   @override
   int get selectedIndex;
+  @override
+  bool get panelState;
   @override
   @JsonKey(ignore: true)
   _$HomeStateCopyWith<_HomeState> get copyWith =>
