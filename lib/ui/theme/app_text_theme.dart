@@ -17,7 +17,7 @@ class AppTextTheme {
   });
 
   factory AppTextTheme() {
-    final _normalRegular = GoogleFonts.notoSans(
+    final _normalRegular = GoogleFonts.zenKakuGothicNew(
       textStyle: const TextStyle(
         fontWeight: FontWeight.w400,
         height: 1.5,

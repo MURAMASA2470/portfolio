@@ -21,30 +21,29 @@ class HobbyPage extends HookConsumerWidget {
 
     return state.when(
       data: (data) {
-        return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Assets.img.supermarket.image(width: 400),
-                Text(
-                  l10n.hello,
-                  style: theme.textTheme.h70.bold(),
+        return Container(
+          child: Column(
+            children: [
+              Assets.img.hobby01.image(width: 400),
+              Text(
+                l10n.hello,
+                style: theme.textTheme.h70.bold(),
+              ),
+              Text(
+                'Hobby Page',
+                style: theme.textTheme.h70.bold(),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: theme.appColors.primary,
+                  onPrimary: theme.appColors.onPrimary,
                 ),
-                Text(
-                  'Hobby Page',
-                  style: theme.textTheme.h70.bold(),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: theme.appColors.primary,
-                    onPrimary: theme.appColors.onPrimary,
-                  ),
-                  onPressed: () {},
-                  child: Text(data.count.toString()),
-                )
-              ],
-            ),
-          );
+                onPressed: () {},
+                child: Text(data.count.toString()),
+              )
+            ],
+          ),
+        );
       },
       error: (e, msg) => Text(e.toString()),
       loading: () {

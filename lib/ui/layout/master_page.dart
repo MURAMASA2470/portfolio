@@ -23,11 +23,26 @@ class MasterPage extends HookConsumerWidget {
     return state.when(
       data: (data) {
         return AutoTabsScaffold(
-          appBarBuilder: (_, tabsRouter) => AppBar(
-            backgroundColor: Colors.indigo,
-            title: const Text('FlutterBottomNav'),
-            centerTitle: true,
-            leading: const AutoBackButton(),
+          appBarBuilder: (_, tabsRouter) => PreferredSize(
+            preferredSize: const Size.fromHeight(32),
+            child: AppBar(
+              backgroundColor: theme.appColors.background,
+              bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(1),
+                child: Container(
+                  height: 1,
+                  color: theme.appColors.surface,
+                ),
+              ),
+              title: SizedBox(
+                width: 180,
+                height: 30,
+                child: Assets.svg.portfolioLogo
+                    .svg(alignment: Alignment.center, fit: BoxFit.contain),
+              ),
+              centerTitle: true,
+              leading: const AutoBackButton(),
+            ),
           ),
           routes: const [
             HomeRouter(),
@@ -36,14 +51,9 @@ class MasterPage extends HookConsumerWidget {
           bottomNavigationBuilder: (_, tabsRouter) {
             return BottomNavigationBar(
               items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label: 'Home'
-                ),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.business),
-                    label: 'Hobby'
-                ),
+                    icon: Icon(Icons.business), label: 'Hobby'),
               ],
               currentIndex: tabsRouter.activeIndex,
               onTap: tabsRouter.setActiveIndex,
