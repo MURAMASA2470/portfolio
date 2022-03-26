@@ -23,102 +23,121 @@ class ListedIssuesPage extends HookConsumerWidget {
 
     final List<Map<String, dynamic>> itemList = <Map<String, dynamic>>[
       {
-        'title': '国内株式',
-        'price': 41345538,
+        'companyName': '日本たばこ産業',
+        'currentPrice': 2091.0,
       },
       {
-        'title': '先進国株式',
-        'price': 23392077,
+        'companyName': '武田製薬',
+        'currentPrice': 3612.0,
       },
       {
-        'title': '新興国株式',
-        'price': 5759832,
+        'companyName': 'シダックス',
+        'currentPrice': 381.0,
       },
       {
-        'title': '国内債券',
-        'price': 894648,
+        'companyName': 'ライオン',
+        'currentPrice': 1393.0,
       },
       {
-        'title': '先進国債権',
-        'price': 375920,
+        'companyName': 'オリエンタルランド',
+        'currentPrice': 23975.0,
       },
       {
-        'title': '国内REIT',
-        'price': 94648,
+        'companyName': 'トリドールホールディングス',
+        'currentPrice': 2345.0,
       },
     ];
 
     return state.when(
       data: (data) {
         return SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(30, 15, 20, 0),
-                    width: 100,
-                    height: 60,
-                    child: Text(
-                      '総資産',
-                      style: theme.textTheme.h70.comfort(),
-                    ),
-                  ),
-                  Expanded(
+          child: Container(
+            margin: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
                       child: SizedBox(
-                    height: 45,
-                    child: Text(
-                      formatter.format(83973438) + ' 円',
-                      style: theme.textTheme.h70.comfort(),
-                    ),
-                  ))
-                ],
-              ),
-              const Divider(),
-              Assets.img.hobby01.image(width: 400),
-              const Divider(),
-              ListView.separated(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                padding: const EdgeInsets.all(8),
-                itemCount: itemList.length,
-                itemBuilder: (context, index) {
-                  return TextButton(
-                    style: TextButton.styleFrom(
-                      primary: Colors.grey,
-                    ),
-                    onPressed: () {},
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.fromLTRB(30, 15, 10, 0),
-                          height: 50,
-                          child: Text(
-                            itemList[index]['title'],
-                            style: theme.textTheme.h50.bold(),
-                          ),
+                        height: 60,
+                        child: Row(
+                          children: [
+                            Text(
+                              '  銘柄一覧',
+                              textAlign: TextAlign.right,
+                              style: theme.textTheme.h70.comfort(),
+                            ),
+                            Text(
+                              ' - 国内銘柄 -',
+                              textAlign: TextAlign.right,
+                              style: theme.textTheme.h60.comfort(),
+                            ),
+                          ],
                         ),
-                        Expanded(
-                            child: SizedBox(
-                          height: 50,
-                          child: Text(
-                            formatter.format(itemList[index]['price']) + ' 円',
-                            style: theme.textTheme.h50.comfort(),
-                            textAlign: TextAlign.end,
-                          ),
+                      ),
+                    ),
+                    Container(
+                        margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                        width: 40,
+                        height: 60,
+                        child: IconButton(
+                          icon: const Icon(Icons.search),
+                          iconSize: 40,
+                          color: Colors.grey,
+                          onPressed: () {},
                         )),
-                        const SizedBox(
-                          width: 50,
-                          child: Icon(Icons.chevron_right),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-                separatorBuilder: (context, index) => const Divider(),
-              ),
-            ],
+                  ],
+                ),
+                const Divider(indent: 0),
+                ListView.separated(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
+                  itemCount: itemList.length,
+                  itemBuilder: (context, index) {
+                    return TextButton(
+                      style: TextButton.styleFrom(
+                        primary: Colors.grey,
+                      ),
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                              child: SizedBox(
+                            child: Text(
+                              itemList[index]['companyName'],
+                              style: theme.textTheme.h50.bold(),
+                              softWrap: false,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            height: 50,
+                          )),
+                          Container(
+                            margin: const EdgeInsets.fromLTRB(7, 5, 10, 5),
+                            height: 50,
+                            child: Text(
+                              formatter
+                                      .format(itemList[index]['currentPrice']) +
+                                  ' 円',
+                              style: theme.textTheme.h50.comfort(),
+                              textAlign: TextAlign.end,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 50,
+                            height: 50,
+                            child: Icon(Icons.chevron_right),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  separatorBuilder: (context, index) =>
+                      const Divider(indent: 0),
+                ),
+              ],
+            ),
           ),
         );
       },
