@@ -46,11 +46,33 @@ class ListedIssuesPage extends HookConsumerWidget {
         'companyName': 'トリドールホールディングス',
         'currentPrice': 2345.0,
       },
+      {
+        'companyName': 'トリドールホールディングス',
+        'currentPrice': 2345.0,
+      },
+      {
+        'companyName': 'トリドールホールディングス',
+        'currentPrice': 2345.0,
+      },
+      {
+        'companyName': 'トリドールホールディングス',
+        'currentPrice': 2345.0,
+      },
+      {
+        'companyName': 'トリドールホールディングス',
+        'currentPrice': 2345.0,
+      },
+      {
+        'companyName': 'トリドールホールディングス',
+        'currentPrice': 2345.0,
+      },
     ];
 
     return state.when(
       data: (data) {
         return SingleChildScrollView(
+          key: UniqueKey(),
+          controller: ScrollController(),
           child: Container(
             margin: const EdgeInsets.fromLTRB(8, 0, 0, 0),
             child: Column(

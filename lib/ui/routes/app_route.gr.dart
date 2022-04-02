@@ -15,7 +15,7 @@ import 'package:flutter/material.dart' as _i6;
 import 'package:portfolio/ui/hobby/hobby_page.dart' as _i3;
 import 'package:portfolio/ui/home/home_page.dart' as _i2;
 import 'package:portfolio/ui/layout/master_page.dart' as _i1;
-import 'package:portfolio/ui/listed_issues/listed_issues.dart' as _i4;
+import 'package:portfolio/ui/listed_issues/listed_issues_page.dart' as _i4;
 
 class AppRouter extends _i5.RootStackRouter {
   AppRouter([_i6.GlobalKey<_i6.NavigatorState>? navigatorKey])

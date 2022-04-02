@@ -21,7 +21,7 @@ class HobbyPage extends HookConsumerWidget {
     final l10n = useL10n();
     final formatter = NumberFormat('#,###.#');
 
-    final List<Map<String, dynamic>> itemList = <Map<String, dynamic>>[
+    final List<Map<String, dynamic>> itemList = [
       {
         'title': '国内株式',
         'price': 41345538,
@@ -51,6 +51,8 @@ class HobbyPage extends HookConsumerWidget {
     return state.when(
       data: (data) {
         return SingleChildScrollView(
+          key: UniqueKey(),
+          controller: ScrollController(),
           child: Column(
             children: [
               Row(

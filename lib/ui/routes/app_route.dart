@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:portfolio/ui/hobby/hobby_page.dart';
 import 'package:portfolio/ui/home/home_page.dart';
 import 'package:portfolio/ui/layout/master_page.dart';
-import 'package:portfolio/ui/listed_issues/listed_issues.dart';
+import 'package:portfolio/ui/listed_issues/listed_issues_page.dart';
 import 'package:portfolio/ui/routes/route_path.dart';
 
 @AdaptiveAutoRouter(replaceInRouteName: 'Page,Route', routes: [
